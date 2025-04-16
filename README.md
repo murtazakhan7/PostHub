@@ -20,10 +20,3 @@ Database: SQLite (default, configurable)
 
 Version Control: Git and GitHub
 
-Getting Started
-Prerequisites
-Python 3.x installed on your machine
-
-pip, the Python package installer
-
-Virtualenv (recommended)
