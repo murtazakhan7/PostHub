@@ -1,0 +1,17 @@
+{% extends "users/layout.html" %}
+
+{% block title %}
+<title>Register User</title>
+{% endblock %}
+
+
+{% block body %}
+<h1>Register a new user</h1>
+<form action="{%url 'users:register'%}" method='post'>
+    {% csrf_token %}
+
+{{form.as_p}}
+<button>Submit</button>
+</form>
+
+{% endblock %}
