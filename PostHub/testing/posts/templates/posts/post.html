@@ -14,6 +14,7 @@
         <a href="{% url 'posts:list' slug=post.slug %}" >
         {{post.title}}
     </a>
+    <p> by {{post.author }}</p>
  </h1>
     {{post.body}}
     {{post.time}}

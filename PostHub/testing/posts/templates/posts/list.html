@@ -10,8 +10,14 @@
 </head>
 <body>
 
-    <img class="myimage" src="{{post.image.url}}" alt="myimage">
+    {% if post.image %}
+    <img class="myimage" src="{{ post.image.url }}" alt="myimage">
+    {% else %}
+   <img class="myimage" src="{% static 'default.jpg' %}" alt="No image available">
+    {% endif %}
+
     <h1> {{post.title}} </h1>
+    <p>by {{ post.author }}</p>
     {{post.body}}
     {{post.time}}
   

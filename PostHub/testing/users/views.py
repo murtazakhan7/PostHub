@@ -4,6 +4,7 @@ from django.urls import reverse
 
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login,logout 
+from django.contrib.auth import login
 
 from django.contrib.auth.decorators import login_required
 
@@ -24,12 +25,12 @@ def register(request):
             'form':form
         })
     
-def login(request):
+def login_view(request):
     if request.method=='POST':
         form=AuthenticationForm(data=request.POST)
         if form.is_valid:
-            user=form.get_user()
-            login(request,user)
+            # user=form.get_user()
+            login(request,form.get_user())
             return redirect('posts:index')
     else:
         form=AuthenticationForm()
